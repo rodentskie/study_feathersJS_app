@@ -1,0 +1,556 @@
+$primary-color: #333;
+$background-color: #f1f3f4;
+$green: #0d874a;
+$theme-colors: (
+  "primary": #0074d9,
+  "success": #00a651,
+  "danger": #d14d4d,
+  "gray": #f1f3f4,
+  "light-blue": #265680,
+  "biotech": #00a651,
+  "edit": #e27429,
+  "first-level": #455a64,
+  //first-level STATUS
+    "second-level": #77ab59,
+  //second-level STATUS
+    "third-level": #0d874a,
+  //third-level STATUS
+    "fourth-level": #4b5c40,
+  //fourth-level STATUS
+);
+
+$input-focus-border-color: ($green);
+
+$component-active-bg: ($green);
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
+
+body {
+  font-size: 100%;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: $background-color;
+}
+
+.body_loading {
+  background-color: white;
+}
+
+// LOGIN
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login {
+  margin-top: 30px;
+  border: 0px;
+}
+
+.login:hover {
+  background: #00a651;
+  border: 0px;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 42px;
+  color: #00a651;
+  letter-spacing: 1px;
+}
+.bcard {
+  border: 0px;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.subtitle {
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
+
+input:focus {
+  outline-width: 0px;
+  border-bottom: 2px solid #00a651;
+  transition: 0.4s;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+}
+.username,
+.password {
+  transition: 0.4s;
+  background: white;
+  border-bottom: 2px solid gray;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.password {
+  margin-top: 20px;
+}
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 2;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: gray;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+// New Password
+.newpass {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 330;
+  font-size: 35px;
+  color: #00a651;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+}
+
+// ALERT VALIDATION
+.alert {
+  position: fixed;
+  top: 90%;
+  right: 1%;
+  z-index: 10000;
+}
+.alert-danger {
+  color: #fff;
+  background-color: #b31f09;
+  border-color: #fff;
+}
+.alert-success {
+  color: #fff;
+  background-color: #00a651;
+  border-color: #fff;
+}
+
+// SIDEBAR
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+}
+
+.hr {
+  background-color: white;
+}
+
+#sidebar {
+  /* don't forget to add all the previously mentioned styles here too */
+  position: fixed;
+  bottom: 0px;
+  background-color: #01401f;
+  height: 100%;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.65), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s;
+  min-width: 225px;
+  margin-right: 20rem;
+  max-width: 260px;
+  font-size: 13px;
+  z-index: 100;
+}
+
+// SCROLLBAR
+#sidebar {
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 15px;
+  /* background: linear-gradient(-90deg, #aac758, #476e03); */
+}
+
+#sidebar ul.components {
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: white;
+  background: #01612f;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #00803e;
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #00803e;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.right {
+  position: absolute;
+  right: 30px;
+}
+
+// PAGINATION
+.badge-font-size {
+  font-size: 15px;
+}
+
+.page-item.active .page-link {
+  background-color: #00a651 !important;
+  border-color: #00a651 !important;
+  transition: background-color 0.3s;
+}
+
+.page-item .page-link {
+  color: black;
+}
+
+// TABS
+a:hover {
+  color: #00a651;
+  text-decoration: underline;
+  background-color: rgb(250, 250, 250);
+}
+
+a {
+  color: #5f6368;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #00a651;
+  background-color: white;
+  border-color: #f7f7f7 #f7f7f7 #00a651 #f7f7f7;
+  border-width: 0px 0px 4px 0px;
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.cardShadow {
+  box-shadow: 0px 10px 30px -23px black;
+}
+
+.border-card {
+  border-left: 4px solid #00a651;
+}
+
+.border-cardNew {
+  border-left: 4px solid #a5cd39;
+}
+
+.shadows {
+  box-shadow: 10px 10px 15px -2px rgba(0, 0, 0, 0.095);
+}
+
+.form_fields {
+  font-size: 10px;
+}
+
+.error {
+  display: block;
+  color: #dc7979;
+  font-size: 0.75rem;
+  margin-left: 7px;
+}
+
+.colpadding {
+  padding-left: 0px;
+}
+
+.mainPages {
+  margin-top: 30px;
+  margin-left: 10px; /* Same as the width of the sidenav */
+  margin-right: 10px;
+  margin-bottom: -50px;
+  padding: 5px 5px;
+}
+
+// Change Password
+.main {
+  margin-top: 0px;
+  margin-left: 0px; /* Same as the width of the sidenav */
+  margin-right: 0px;
+  margin-bottom: -50px;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+// BUTTON
+.button-circle {
+  box-shadow: 0px 10px 20px -10px #000000;
+  font-size: 12px;
+  border-radius: 15px;
+  width: 28px;
+  margin-bottom: 3px;
+}
+
+.button-sq {
+  font-size: 75%;
+  border: 0px;
+  margin: auto;
+  width: 7.4rem;
+  position: relative;
+  box-shadow: 0px 10px 15px -10px #000000;
+}
+
+.button-modal {
+  font-size: 13px;
+}
+
+.logo {
+  height: 5%;
+  width: 5%;
+}
+
+.table {
+  font-size: 11px;
+  margin-top: 3.5px;
+  max-height: 40rem;
+  overflow-y: auto;
+}
+
+.icons {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+// VUE-WIZARD
+.vue-form-wizard .wizard-title {
+  color: #fff;
+}
+
+.vue-form-wizard .category {
+  color: #fff;
+}
+
+.formStepper {
+  margin-top: -3%;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #00a651;
+  background-color: #00a651;
+}
+
+.dropdown-menu {
+  min-width: 20rem;
+  overflow-y: auto;
+}
+
+.drop-down {
+  max-height: 20vh;
+  font-size: 14px;
+}
+
+.dropdown-view {
+  min-width: 15rem;
+  max-height: 20vh;
+}
+
+.dropdown-status {
+  max-width: 5rem;
+}
+
+// TEXTFIELDS
+.form-text:focus {
+  font-size: 10px;
+  margin: 0px;
+  border-radius: 0;
+  outline: none !important;
+  box-shadow: none;
+  outline-width: 0px;
+  border-bottom: 2px solid #00a651;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+}
+
+.form-text {
+  font-size: 10px;
+  margin: 0px;
+  border-radius: 0;
+  border-width: 0px 0px 1.2px 0px;
+}
+.form-text-noBorder {
+  font-size: 10px;
+  margin-top: 0px;
+  border-radius: 0;
+  border-width: 0px 0px 0px 0px;
+  text-align: center;
+}
+.form-table {
+  color: #00a651;
+  font-weight: bold;
+}
+
+// Main Table
+.nuxt-table {
+  padding-left: 15.75rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+// Date-Range Picker
+.reportrange-text[data-v-0fe7292a] {
+  border: 1px solid #ccc;
+  height: 2rem;
+  width: 14rem;
+  font-size: 14px;
+}
+
+.daterangepicker.show-ranges .drp-calendar.left {
+  position: relative;
+  right: 8px;
+}
+.daterangepicker.show-ranges .drp-calendar.left {
+  border-left: 0px solid #ddd;
+}
+.daterangepicker .ranges li.active {
+  background-color: #00a651;
+  color: #fff;
+}
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #00a651;
+  border-color: transparent;
+  color: #fff;
+}
+.daterangepicker .ranges li.active {
+  background-color: #00a651;
+  color: #fff;
+}
+
+// LOGOUT MODAL
+.session-modal {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+// ASTERISK REQUIRED FIELD
+.asterisk {
+  font-size: 12px;
+  color: #00a651;
+}
+
+// Vuelidate Form
+
+.was-validated .form-control:invalid,
+.was-validated .form-control:valid,
+.form-control.is-invalid,
+.form-control.is-valid {
+  background-position: right calc(0.375em + 0.1875rem) center;
+  transition: none;
+}

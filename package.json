@@ -1,0 +1,35 @@
+{
+  "name": "vue-feathers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@feathersjs/feathers": "^4.5.8",
+    "@feathersjs/socketio-client": "^4.5.8",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@nuxtjs/axios": "^5.12.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "font-awesome-icons": "^1.6.0",
+    "nuxt": "^2.14.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
+    "sass-loader": "^9.0.3"
+  }
+}
