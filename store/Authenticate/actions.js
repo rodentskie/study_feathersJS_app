@@ -7,7 +7,7 @@ export default {
         'create',
         'authentication',
         {
-          strategy: info.strategy,
+          strategy: process.env.strategy,
           email: info.email,
           password: info.password,
         },

@@ -30,14 +30,14 @@ export default {
    ** Global CSS
    */
   css: [
-    "@fortawesome/fontawesome-svg-core/styles.css",
-    "@/assets/scss/main.scss"
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    '@/assets/scss/main.scss',
   ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [{ src: '~/plugins/socket-connect.js', ssr: false }],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -61,17 +61,18 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://localhost:44'
+    baseURL: 'http://localhost:44',
   },
   server: {
     host: 'localhost',
     port: 55,
   },
   env: {
-    ENCRYPTION_KEY: "3zTvzr3p67VC61jmV54rIYu1545x4TlY",
-    IV: "60iP0h6vJoEa",
-    ALGORITHM: "aes-256-gcm",
-    socketUrl: "https://socket.jltechsol.com"
+    ENCRYPTION_KEY: '3zTvzr3p67VC61jmV54rIYu1545x4TlY',
+    IV: '60iP0h6vJoEa',
+    ALGORITHM: 'aes-256-gcm',
+    socketUrl: 'http://localhost:44',
+    strategy: 'local',
   },
   /*
    ** Build configuration

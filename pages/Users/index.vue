@@ -55,42 +55,39 @@ export default {
           sortable: true,
         },
       ],
-      items: [
-        {
-          age: 40,
-          email: 'test@gmail.com',
-          createdAt: '2020-08-15',
-          updatedAt: '2020-08-15',
-        },
-        {
-          age: 15,
-          email: 'test1@gmail.com',
-          createdAt: '2020-08-16',
-          updatedAt: '2020-08-16',
-        },
-        {
-          age: 24,
-          email: 'test2@gmail.com',
-          createdAt: '2020-08-17',
-          updatedAt: '2020-08-17',
-        },
-      ],
+      items: [],
     }
   },
   async created() {
     this.toLogin()
-    await this.retrieveUsers()
+
+    // set time out; .5 sec
+    setTimeout(async () => {
+      await this.retrieveUsers()
+    }, 500)
   },
   computed: {
     // ...mapGetters({
     //   listUsers: 'Users/getUserList',
     // }),
   },
+  async mounted() {},
   methods: {
     async retrieveUsers() {
       try {
         const res = await this.$store.dispatch('Users/fetchUsers')
-        console.log(res);
+        const data = res.data
+        for (let i = 0; i < data.length; i++) {
+          const e = data[i]
+
+          this.items.push({
+            id: e.id,
+            age: e.age,
+            email: e.email,
+            createdAt: e.createdAt,
+            updatedAt: e.updatedAt,
+          })
+        }
       } catch (e) {
         console.log('Error fetch users: ', e)
       }

@@ -50,7 +50,7 @@ export default {
   layout: 'loginLayout',
   data() {
     return {
-      user: { email: null, password: null },
+      user: { email: 'test@gmail.com', password: 'qwe' },
     }
   },
   async created() {
@@ -123,13 +123,14 @@ export default {
         })
 
         if (res) {
-          const token = res.accessToken
-          const user = JSON.stringify(res.user)
-
           await localStorage.clear() // clear localStorage
 
-          localStorage.token = await this.encrypt(token)
-          localStorage.user = await this.encrypt(user)
+          const user = {
+            email: this.user.email,
+            password: this.user.password,
+          }
+          const users = JSON.stringify(user)
+          localStorage.user = await this.encrypt(users)
 
           this.showMessage('Successful login!', 'primary', 'Success..')
 
